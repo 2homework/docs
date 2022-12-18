@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Загрузка товаров &#8212; документация MarketBot 1.0.0</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Алфавитный указатель" href="genindex.html" />
+    <link rel="search" title="Поиск" href="search.html" />
+    <link rel="prev" title="Авторизация" href="firststep.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="id1">
+<h1>Загрузка товаров<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
+<p>После успешной авторизации вы попадаете на страницу основного функционала приложения (загрузки товаров). В ней содержится два поля: (<a class="reference internal" href="#id2">Идентификатор категории загружаемых товаров</a>); (<a class="reference internal" href="#excel">Номер страницы в excel</a>). Для реализации загрузки необходимо заполнить оба поля и нажать кнопку начать. Описание каждого из полей представлено ниже.</p>
+<section id="id2">
+<h2>Идентификатор категории загружаемых товаров<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Первым полем на странице загрузки товаров является идентификатор категории. Используется для определения категории, к которой будут относиться загружаемые товары.</p>
+<p>Является числовым значением. Доступные идентификаторы представлены ниже.</p>
+<section id="id3">
+<h3>Идентификаторы<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<p><em>Структура: «идентификатор» - «наименование категории»</em></p>
+<ul>
+<li><p><strong>Гардероб</strong></p>
+<blockquote>
+<div><p>1 - Женская одежда. 2 - Мужская одежда</p>
+<p>3 - Детская одежда. 4 - Обувь и сумки</p>
+<p>5 - Аксессуары и украшения</p>
+</div></blockquote>
+</li>
+<li><p><strong>Детские товары</strong></p>
+<blockquote>
+<div><p>100 - Автокресла. 101 - Детские коляски</p>
+<p>102 - Детская комната. 103 - Игрушки</p>
+<p>104 - Мамам и малышам. 105 - Обучение и творчество</p>
+<p>106 - Школьникам</p>
+</div></blockquote>
+</li>
+<li><p><strong>Электроника</strong></p>
+<blockquote>
+<div><p>200 - Телефоны и аксессуары. 201 - Фото- и видеокамеры</p>
+<p>202 - Аудио- и видеотехника. 203 - Портативная техника</p>
+<p>204 - Игровые приставки и игры. 205 - Техника для автомобилей</p>
+<p>206 - Оптические приборы</p>
+</div></blockquote>
+</li>
+<li><p><strong>Компьютерная техника</strong></p>
+<blockquote>
+<div><p>300 - Компьютеры. 301 - Ноутбуки, нетбуки</p>
+<p>302 - Комплектующие и аксессуары. 303 - Периферийные устройства</p>
+<p>304 - Сетевое оборудование. 305 - Оргтехника и расходники</p>
+<p>306 - Фильмы, музыка, программы</p>
+</div></blockquote>
+</li>
+<li><p><strong>Транспорт</strong></p>
+<blockquote>
+<div><p>400 - Автомобили. 401 - Мотоциклы и мототехника</p>
+<p>402 - Грузовики и спецтехника. 403 - Водный транспорт</p>
+<p>404 - Запчасти и аксессуары</p>
+</div></blockquote>
+</li>
+<li><p><strong>Недвижимость</strong></p>
+<blockquote>
+<div><p>500 - Квартиры. 501 - Комнаты</p>
+<p>502 - Дома, дачи, коттеджи. 503 - Земельные участки</p>
+<p>504 - Гаражи и машиноместа. 505 - Коммерческая недвижимость</p>
+<p>506 - Недвижимость за рубежом</p>
+</div></blockquote>
+</li>
+<li><p><strong>Дом и дача</strong></p>
+<blockquote>
+<div><p>600 - Бытовая техника. 601 - Мебель и интерьер</p>
+<p>602 - Кухонные принадлежности. 603 - Текстиль</p>
+<p>604 - Хозяйственные товары. 605 - Ремонт и строительство</p>
+<p>606 - Дача, сад и огород</p>
+</div></blockquote>
+</li>
+<li><p><strong>Красота и здоровье</strong></p>
+<blockquote>
+<div><p>700 - Декоративная косметика. 701 - Парфюмерия</p>
+<p>702 - Уход за лицом и телом. 703 - Приборы и аксессуары</p>
+<p>704 - Оптика</p>
+</div></blockquote>
+</li>
+<li><p><strong>Спорт и отдых</strong></p>
+<blockquote>
+<div><p>800- Активный отдых. 801 - Туризм</p>
+<p>802 - Охота и рыбалка. 803 - Тренажеры и фитнес</p>
+<p>804 - Игры</p>
+</div></blockquote>
+</li>
+<li><p><strong>Досуг и подарки</strong></p>
+<blockquote>
+<div><p>900 - Билеты и путешествия. 901 - Книги и журналы</p>
+<p>902 - Коллекционирование. 903 - Музыкальные инструменты</p>
+<p>904 - Настольные игры. 905 - Подарочные наборы и сертификаты</p>
+<p>906 - Сувениры и цветы. 907 - Рукоделие</p>
+</div></blockquote>
+</li>
+<li><p><strong>Домашние питомцы</strong></p>
+<blockquote>
+<div><p>1000 - Собаки. 1001 - Кошки</p>
+<p>1002 - Грызуны. 1003 - Птицы</p>
+<p>1004 - Рыбы. 1005 - Другие животные</p>
+<p>1006 - Корма и аксессуары</p>
+</div></blockquote>
+</li>
+<li><p><strong>Продукты питания</strong></p>
+<blockquote>
+<div><p>1100 - Бакалея. 1101 - Биопродукты</p>
+<p>1102 - Детское питание. 1103 - Еда на заказ</p>
+<p>1104 - Напитки</p>
+</div></blockquote>
+</li>
+<li><p><strong>Услуги</strong></p>
+<blockquote>
+<div><p>1200 - Фото- и видеосъёмка. 1201 - Удалённая работа</p>
+<p>1202 - Организация мероприятий. 1203 - Красота и здоровье</p>
+<p>1204 - Установка и ремонт техники. 1205 - Уборка и помощь по хозяйству</p>
+<p>1206 - Курьеры и грузоперевозки. 1207 - Обучение и развитие</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="excel">
+<h2>Номер страницы в excel<a class="headerlink" href="#excel" title="Permalink to this heading">¶</a></h2>
+<p>Вторым полем на странице загрузки товаров является номер страницы в excel.</p>
+<p>Указывает на то, с какого листа(sheet) в Excel брать информацию о товарах.</p>
+<p>Может быть как числовым, так и буквенным значением. Указывается либо порядковый номер листа (отчет начинается с единицы) либо название листа.</p>
+<p><a class="reference external" href="index.html">Вернуться к списку разделов</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MarketBot</a></h1>
+
+
+
+
+
+
+
+
+<h3>Навигация</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="excel.html">Структура базы загружаемых товаров</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firststep.html">Авторизация</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Загрузка товаров</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Идентификатор категории загружаемых товаров</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Идентификаторы</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#excel">Номер страницы в excel</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="firststep.html" title="предыдущая глава">Авторизация</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Быстрый поиск</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Искать" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Stanislav Bulgakov.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
